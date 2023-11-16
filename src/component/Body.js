@@ -7,6 +7,7 @@ import "../CSS/test.css";
 import Main from "./Main";
 import Join from "./Join";
 import Login from "./Login";
+import MainBusan from "./API_component/MainBusan";
 
 const BodyDiv = styled.div`
   background-color: #f2ffe9;
@@ -22,6 +23,7 @@ const Body = () => {
           <Route index element={<Main />} />
           <Route path="Join" element={<Join />} />
           <Route path="Login" element={<Login />} />
+          <Route path="MainBusan" element={<MainBusan />} />
         </Routes>
       </BodyDiv>
     </BrowserRouter>

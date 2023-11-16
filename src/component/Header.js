@@ -67,6 +67,9 @@ const Header = () => {
             <li>
               <a href="/Login">Login</a>
             </li>
+            <li>
+              <a href="/MainBusan">7beach_Food</a>
+            </li>
           </ul>
         </Navigation>
       </HeaderContent>
