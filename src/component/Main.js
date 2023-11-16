@@ -1,6 +1,6 @@
-import { Button } from "antd";
 import React from "react";
 import styled from "styled-components";
+import { Button } from "antd";
 
 //yarn add react-router-dom으로 도구 설치
 import { useNavigate } from "react-router-dom";
@@ -40,9 +40,9 @@ const Main = () => {
         <h1>메인 페이지</h1>
         <Container>
           <MainTitleTextCss>styled components test</MainTitleTextCss>
-          {/* <Button title="회원가입하기" onClick={() => navigate("/Join")}>
+          <Button title="회원가입하기" onClick={() => navigate("/Join")}>
             회원가입하기
-          </Button> */}
+          </Button>
           <br />
         </Container>
       </div>

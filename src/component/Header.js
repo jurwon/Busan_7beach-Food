@@ -70,6 +70,9 @@ const Header = () => {
             <li>
               <a href="/MainBusan">7beach_Food</a>
             </li>
+            <li>
+              <a href="/MenuBusan">Menu</a>
+            </li>
           </ul>
         </Navigation>
       </HeaderContent>

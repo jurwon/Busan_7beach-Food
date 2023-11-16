@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 
 const Join = () => {
   const [Image, setImage] = useState(require("../image/login.gif"));
-  const [File, setFile] = useState("");
+  const [setFile] = useState("");
 
   const fileInput = useRef(null);
 

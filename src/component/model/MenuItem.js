@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FoodItemCss = styled.div`
+const MenuItemCss = styled.div`
   display: flex;
   padding: 20px;
   border: 1px solid gray;
@@ -44,24 +44,21 @@ const FoodItemCss = styled.div`
   }
 `;
 
-const FoodItem = ({ item }) => {
-  const { RSTR_NM, AREA_NM, MENU_ID, FOOD_IMG_URL } = item;
+const MenuItem = ({ item }) => {
+  const { MENU_NM, MENU_PRICE, RSTR_ID, RSTR_NM } = item;
   return (
     <div>
-      <FoodItemCss>
-        {FOOD_IMG_URL && (
-          <div className="thumbnail">
-            <img src={FOOD_IMG_URL} alt="thumbnail" />
-          </div>
-        )}
+      <MenuItemCss>
         <div className="contents">
-          <h2>{RSTR_NM}</h2>
-          <p>{AREA_NM}</p>
-          <p>메뉴 번호 : {MENU_ID}</p>
+          <h2>
+            {RSTR_NM} (ID : {RSTR_ID})
+          </h2>
+          <p>{MENU_NM}</p>
+          <p>가격 : {MENU_PRICE}</p>
         </div>
-      </FoodItemCss>
+      </MenuItemCss>
     </div>
   );
 };
 
-export default FoodItem;
+export default MenuItem;

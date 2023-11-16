@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import FoodItem from "../model/FoodItem";
+import MenuItem from "../model/MenuItem";
 
-const BusanListCss = styled.div`
+const MenuListCss = styled.div`
   box-sizing: border-box;
   padding-bottom: 3rem;
   width: 768px;
@@ -17,16 +17,21 @@ const BusanListCss = styled.div`
   }
 `;
 
-//https://busan-7beach.openapi.redtable.global/api/food/img?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT
-// {
-//   "RSTR_ID": 1241,
-//   "RSTR_NM": "해운대암소갈비집",
-//   "AREA_NM": "부산광역시 해운대구",
-//   "MENU_ID": 107,
-//   "FOOD_IMG_URL": "https://ukcooyocdlvo8099722.cdn.ntruss.com/public_data/menu_images/3137300_1638842983_menu.png"
-// },
+//https://busan-7beach.openapi.redtable.global/api/menu/korean?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT
+// "body": [
+//   {
+//       "MENU_ID": 104,
+//       "MENU_NM": "생갈비(1인분/180g)",
+//       "MENU_PRICE": 48000,
+//       "SPCLT_MENU_YN": "N",
+//       "SPCLT_MENU_NM": null,
+//       "SPCLT_MENU_OGN_URL": null,
+//       "AREA_NM": "부산광역시 해운대구",
+//       "RSTR_ID": 1241,
+//       "RSTR_NM": "해운대암소갈비집"
+//   },
 
-const BusanFoodList = () => {
+const MenuList = () => {
   const [data, setData] = useState(null);
   //data 받는중이면 true, 다 받았으면 false
   const [loading, setLoading] = useState(null);
@@ -36,7 +41,7 @@ const BusanFoodList = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://busan-7beach.openapi.redtable.global/api/food/img?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT`
+          `https://busan-7beach.openapi.redtable.global/api/menu/korean?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT`
         );
         setData(response.data.body);
       } catch (e) {
@@ -48,7 +53,7 @@ const BusanFoodList = () => {
   }, []);
 
   if (loading) {
-    return <BusanListCss>데이터 받는중 (대기중...) </BusanListCss>;
+    return <MenuListCss>데이터 받는중 (대기중...) </MenuListCss>;
   }
 
   if (!data) {
@@ -57,12 +62,12 @@ const BusanFoodList = () => {
   }
 
   return (
-    <BusanListCss>
+    <MenuListCss>
       {data.map((item) => (
-        <FoodItem key={item.RSTR_ID} item={item} />
+        <MenuItem key={item.MENU_ID} item={item} />
       ))}
-    </BusanListCss>
+    </MenuListCss>
   );
 };
 
-export default BusanFoodList;
+export default MenuList;
