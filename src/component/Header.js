@@ -71,10 +71,7 @@ const Header = () => {
               <a href="/MainBusan">7beach_Food</a>
             </li>
             <li>
-              <a href="/MenuBusan">Menu</a>
-            </li>
-            <li>
-              <a href="/menuPage/korean">All</a>
+              <a href="/menuPage/korean">Menu</a>
             </li>
           </ul>
         </Navigation>

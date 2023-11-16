@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "antd";
-
-//yarn add react-router-dom으로 도구 설치
-import { useNavigate } from "react-router-dom";
 
 const MainTitleTextCss = styled.p`
   font-size: 30px;
@@ -31,18 +27,14 @@ const Container = styled.div`
 `;
 
 const Main = () => {
-  const navigate = useNavigate();
-  //styled.원하는 태그 선택 '(백틱) '(백틱), 열고 닫고
-
   return (
     <Wrapper>
       <div>
         <h1>메인 페이지</h1>
         <Container>
-          <MainTitleTextCss>styled components test</MainTitleTextCss>
-          <Button title="회원가입하기" onClick={() => navigate("/Join")}>
-            회원가입하기
-          </Button>
+          <MainTitleTextCss>
+            부산 7바다명소 식당 소개 페이지입니다.
+          </MainTitleTextCss>
           <br />
         </Container>
       </div>

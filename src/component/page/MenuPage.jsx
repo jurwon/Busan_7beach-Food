@@ -8,6 +8,7 @@ const MenuPage = () => {
   const category = params.category || "korean";
   return (
     <div>
+      <h1>Menu</h1>
       <Categories />
       <MenuList category={category} />
     </div>

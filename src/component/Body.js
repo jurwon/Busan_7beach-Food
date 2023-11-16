@@ -8,7 +8,6 @@ import Main from "./Main";
 import Join from "./Join";
 import Login from "./Login";
 import MainBusan from "./API_component/MainBusan";
-import MenuBusan from "./API_component2/MenuBusan";
 import MenuPage from "./page/MenuPage";
 
 const BodyDiv = styled.div`
@@ -26,7 +25,6 @@ const Body = () => {
           <Route path="Join" element={<Join />} />
           <Route path="Login" element={<Login />} />
           <Route path="MainBusan" element={<MainBusan />} />
-          <Route path="MenuBusan" element={<MenuBusan />} />
           <Route path="menuPage/:category" element={<MenuPage />} />
         </Routes>
       </BodyDiv>
