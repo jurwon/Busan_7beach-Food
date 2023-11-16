@@ -31,7 +31,7 @@ const MenuListCss = styled.div`
 //       "RSTR_NM": "해운대암소갈비집"
 //   },
 
-const MenuList = () => {
+const MenuList = ({ category }) => {
   const [data, setData] = useState(null);
   //data 받는중이면 true, 다 받았으면 false
   const [loading, setLoading] = useState(null);
@@ -40,8 +40,12 @@ const MenuList = () => {
     const resultData = async () => {
       setLoading(true);
       try {
+        const query = category === "" ? "korean" : `${category}`;
+
+        console.log(query);
+
         const response = await axios.get(
-          `https://busan-7beach.openapi.redtable.global/api/menu/korean?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT`
+          `https://busan-7beach.openapi.redtable.global/api/menu/${query}?serviceKey=BoGq4yf60wTcnY7KBzwjDtnkb8Za8w1B8gatmktsAW0QLNKxnMvksGh27rngdxwT`
         );
         setData(response.data.body);
       } catch (e) {
@@ -50,7 +54,7 @@ const MenuList = () => {
       setLoading(false);
     };
     resultData();
-  }, []);
+  }, [category]);
 
   if (loading) {
     return <MenuListCss>데이터 받는중 (대기중...) </MenuListCss>;

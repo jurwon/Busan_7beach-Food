@@ -9,6 +9,7 @@ import Join from "./Join";
 import Login from "./Login";
 import MainBusan from "./API_component/MainBusan";
 import MenuBusan from "./API_component2/MenuBusan";
+import MenuPage from "./page/MenuPage";
 
 const BodyDiv = styled.div`
   background-color: #f2ffe9;
@@ -26,6 +27,7 @@ const Body = () => {
           <Route path="Login" element={<Login />} />
           <Route path="MainBusan" element={<MainBusan />} />
           <Route path="MenuBusan" element={<MenuBusan />} />
+          <Route path="menuPage/:category" element={<MenuPage />} />
         </Routes>
       </BodyDiv>
     </BrowserRouter>

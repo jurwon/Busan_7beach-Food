@@ -73,6 +73,9 @@ const Header = () => {
             <li>
               <a href="/MenuBusan">Menu</a>
             </li>
+            <li>
+              <a href="/menuPage/korean">All</a>
+            </li>
           </ul>
         </Navigation>
       </HeaderContent>
